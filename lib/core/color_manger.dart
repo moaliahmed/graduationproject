@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 class ColorManager {
   // light
   static Color background = const Color(0xffF8F9FC);
+  static Color background1 = const Color.fromARGB(255, 85, 145, 141);
+  static Color boxShadow = const Color.fromRGBO(47, 125, 121, 0.3);
   static Color surface = const Color(0xffffffff);
   static Color otline = const Color(0xffD7D9E4);
   static Color text = const Color(0xff11183C);
@@ -11,6 +13,7 @@ class ColorManager {
   static Color green = const Color(0xff098C26);
   static Color orange = const Color(0xffF7931A);
   static Color red = const Color(0xffCD0000);
+  static Color white = const Color(0xffffffff);
 
 
 // dark

@@ -53,9 +53,9 @@ ThemeData getApplicationTheme() {
           getLightStyle(color: ColorManager.text, fontSize: FontSize.s16),
       // head line 1
       headlineLarge: getSemiBoldStyle(
-          color: ColorManager.text, fontSize: FontSize.s16),
+          color: ColorManager.surface, fontSize: FontSize.s20),
       headlineMedium:
-          getRegularStyle(color: ColorManager.text, fontSize: FontSize.s14),
+          getRegularStyle(color: ColorManager.surface, fontSize: FontSize.s14),
       // sub title 1
       titleMedium:
           getMediumStyle(color: ColorManager.primary, fontSize: FontSize.s16),
