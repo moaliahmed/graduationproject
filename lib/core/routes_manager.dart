@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:graduation_project/core/string_manager.dart';
-import 'package:graduation_project/home/presentation/screens/settings_view.dart';
-import '../home/presentation/screens/home_view.dart';
-import '../home/presentation/screens/gold_view.dart';
-import '../home/presentation/screens/statis_tics.dart';
+import 'package:graduation_project/gold/presentation/screans/gold_screen.dart';
+import 'package:graduation_project/settings/settings_view.dart';
+import '../main_screen/home_view.dart';
+import '../crypto/presentation/screens/statis_tics.dart';
 import '../login/presentation/screens/forgot_password.dart';
 import '../login/presentation/screens/login_screen.dart';
 import '../login/presentation/screens/onboarding_Screen.dart';
@@ -18,12 +18,13 @@ class Routes {
   static const String forgotPassword = '/forgotPassword ';
   static const String onboarding = '/onboarding ';
   static const String market = '/market';
+  static const String selectCoin = '/selectCoin';
   static const String statistics = '/statistic';
   static const String settings = '/settings';
 }
 
 class RouteGenerator {
-  static Route getRoutes(RouteSettings settings) {
+  static Route getRoutes(RouteSettings settings,) {
     switch (settings.name) {
       case Routes.openScreen:
         return MaterialPageRoute(
@@ -51,7 +52,7 @@ class RouteGenerator {
         );
       case Routes.market:
         return MaterialPageRoute(
-          builder: (_) => const GoldView(),
+          builder: (_) => const GoldScreen(),
         );
       case Routes.statistics:
         return MaterialPageRoute(
@@ -61,8 +62,9 @@ class RouteGenerator {
         return MaterialPageRoute(
           builder: (_) => const SettingView(),
         );
+
       default:
-        return unDefinedRoute();
+        return MaterialPageRoute(builder:(_)=>const HomeView());
     }
   }
 

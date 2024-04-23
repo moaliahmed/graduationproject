@@ -1,9 +1,12 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:graduation_project/core/string_manager.dart';
 import 'package:graduation_project/login/presentation/component/dotindicator_component.dart';
 import 'package:graduation_project/login/presentation/component/onbourd_component.dart';
 
+import '../../../core/assets_manager.dart';
 import '../../../core/color_manger.dart';
 import '../../../core/routes_manager.dart';
 
@@ -54,7 +57,7 @@ class _OnboardingViewState extends State<OnboardingView> {
               top: 10,
               child: SizedBox(
                 width: MediaQuery.of(context).size.width,
-                child: Image.asset('assets/images/CoinmoneyLogo.png'),
+                child: SvgPicture.asset(ImageAssets.coinMoneyLogo),
               ),
             ),
             PageView.builder(
@@ -100,7 +103,7 @@ class _OnboardingViewState extends State<OnboardingView> {
                   height: 52,
                   width: MediaQuery.of(context).size.width,
                   child: Text(
-                    _pageIndex != 2 ? 'Next' : 'Skip',
+                    _pageIndex != 2 ? AppString.next : AppString.skip,
                     style: const TextStyle(color: Colors.white, fontSize: 22),
                   ),
                 ),

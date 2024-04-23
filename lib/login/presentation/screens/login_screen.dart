@@ -4,7 +4,9 @@ import 'package:graduation_project/core/color_manger.dart';
 import 'package:graduation_project/login/presentation/component/button_component.dart';
 import 'package:graduation_project/login/presentation/component/text_form_field_component.dart';
 
+import '../../../core/assets_manager.dart';
 import '../../../core/routes_manager.dart';
+import '../../../core/string_manager.dart';
 
 class SignInView extends StatefulWidget {
  const  SignInView({super.key});
@@ -17,7 +19,12 @@ class _SignInViewState extends State<SignInView> {
   TextEditingController emailEditingController = TextEditingController();
 
   TextEditingController passwordEditingController = TextEditingController();
-
+@override
+  void dispose() {
+    emailEditingController.dispose();
+    passwordEditingController.dispose();
+    super.dispose();
+  }
   @override
   Widget build(BuildContext context) {
     double height= MediaQuery.of(context).size.height;
@@ -37,7 +44,7 @@ class _SignInViewState extends State<SignInView> {
                 ),
                   Center(
                     child: SvgPicture.asset(
-                      'assets/images/CoinmoneyLogo.svg',
+                      ImageAssets.coinMoneyLogo,
                       // Update with your actual file path
                       width: MediaQuery.of(context).size.width*.75,
                       fit: BoxFit.fill,
@@ -57,7 +64,7 @@ class _SignInViewState extends State<SignInView> {
                           child: Row(
                             children: [
                               Text(
-                                'Login to your Account',
+                                AppString.loginToYourAccount,
                                 style: TextStyle(
                                     fontSize: 21,
                                     color: ColorManager.secondary,
@@ -67,13 +74,13 @@ class _SignInViewState extends State<SignInView> {
                           ),
                         ),
                         TextFormFieldComponent(
-                          title: 'Email',
+                          title: AppString.email,
                           icons: Icons.email_outlined,
                           textEditingController: emailEditingController,
                         ),
                         TextFormFieldComponent(
                           hide: true,
-                          title: 'password',
+                          title: AppString.password,
                           icons: Icons.lock_outline_rounded,
                           textEditingController: passwordEditingController,
                         ),
@@ -83,14 +90,14 @@ class _SignInViewState extends State<SignInView> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Text(
-                                'Forgot your password?',
+                                AppString.forgotPassword,
                                 style: Theme.of(context).textTheme.bodyMedium,
                               ),
                               InkWell(
                                 onTap: () => Navigator.pushNamed(context, Routes.forgotPassword),
                                 child: Text(
                                   textAlign: TextAlign.right,
-                                  ' Click here',
+                                  AppString.clickHere,
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: ColorManager.primary,
@@ -101,7 +108,7 @@ class _SignInViewState extends State<SignInView> {
                           ),
                         ),
                         ButtonComponent(
-                            title: 'Sign In',
+                            title: AppString.signIn,
                             function: () {
                               // todo write Navigator go home screen
                               Navigator.pushReplacementNamed(context, Routes.home);
@@ -111,7 +118,7 @@ class _SignInViewState extends State<SignInView> {
                         ),
                         const Text(
                           textAlign: TextAlign.center,
-                          'or sign In using',
+                          AppString.orSignInUsing,
                           style: TextStyle(color: Colors.grey, fontSize: 14),
                         ),
                         Padding(
@@ -127,7 +134,7 @@ class _SignInViewState extends State<SignInView> {
                                     borderRadius: BorderRadius.circular(20),
                                     color: const Color(0xff266ad1)),
                                 child: const Text(
-                                  'Facebook',
+                                  AppString.facebook,
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 18),
                                 ),
@@ -141,7 +148,7 @@ class _SignInViewState extends State<SignInView> {
                                   color: const Color(0xffd14426),
                                 ),
                                 child: const Text(
-                                  'Google',
+                                  AppString.google,
                                   style: TextStyle(
                                       color: Colors.white, fontSize: 18),
                                 ),
@@ -151,7 +158,7 @@ class _SignInViewState extends State<SignInView> {
                         ),
                         const Text(
                           textAlign: TextAlign.center,
-                          'By creating an account, you are agree to our Terms',
+                          AppString.byCreatingAnAccount,
                           style: TextStyle(color: Colors.grey),
                         ),
                         Padding(
@@ -159,13 +166,13 @@ class _SignInViewState extends State<SignInView> {
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
-                              const Text('Don’t have an account?'),
+                              const Text('Don’t ${AppString.haveAnAccount}'),
                               TextButton(
                                 onPressed: () {
                                   Navigator.pushNamed(context, Routes.signUp);
                                 },
                                 child: Text(
-                                  'Sign Up',
+                                  AppString.signUp,
                                   style: TextStyle(
                                     fontSize: 16,
                                     color: ColorManager.primary,

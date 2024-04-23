@@ -7,6 +7,8 @@ import 'package:graduation_project/core/color_manger.dart';
 import 'package:graduation_project/core/routes_manager.dart';
 import 'package:graduation_project/login/presentation/screens/onboarding_Screen.dart';
 
+import '../../../core/assets_manager.dart';
+
 class OpenScreen extends StatefulWidget {
   const OpenScreen({super.key});
 
@@ -14,13 +16,13 @@ class OpenScreen extends StatefulWidget {
   State<OpenScreen> createState() => _OpenScreenState();
 }
 
-List text = ['coinmoney'];
+List text = ['CoinMoney'];
 
 class _OpenScreenState extends State<OpenScreen> {
   @override
   void initState() {
     Timer(const Duration(seconds: 7),
-        () => Navigator.pushReplacementNamed(context, Routes.onboarding));
+        () => Navigator.pushReplacementNamed(context, Routes.home));
     super.initState();
   }
 
@@ -36,7 +38,7 @@ class _OpenScreenState extends State<OpenScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Image.asset('assets/images/Coinmoney.png'),
+                Image.asset(ImageAssets.coinMoneyIcon),
                 const Gap(6),
                 AnimatedTextKit(
                   totalRepeatCount: 2,

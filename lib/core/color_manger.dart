@@ -9,10 +9,12 @@ class ColorManager {
   static Color otline = const Color(0xffD7D9E4);
   static Color text = const Color(0xff11183C);
   static Color secondary = const Color(0xff696F8C);
-  static Color primary = const Color(0xff2F66F6);
+ // static Color primary = const Color(0xff2F66F6);
+  static Color primary = const Color(0xff8ac43f);
   static Color green = const Color(0xff098C26);
   static Color orange = const Color(0xffF7931A);
   static Color red = const Color(0xffCD0000);
+  static Color grey= Colors.grey;
   static Color white = const Color(0xffffffff);
 
 

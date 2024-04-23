@@ -32,6 +32,7 @@ class _TextFormFieldComponentState extends State<TextFormFieldComponent> {
       padding: const EdgeInsets.all(12.0),
       child: TextFormField(
         controller: widget.textEditingController,
+        style: const TextStyle(fontSize: 16),
         decoration: InputDecoration(
           suffixIcon: widget.hide
               ? IconButton(

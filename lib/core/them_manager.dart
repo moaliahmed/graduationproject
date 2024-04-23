@@ -68,9 +68,9 @@ ThemeData getApplicationTheme() {
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.all(AppPadding.p8),
       labelStyle:
-          getMediumStyle(color: ColorManager.text, fontSize: FontSize.s14),
+          getMediumStyle(color: ColorManager.text, fontSize: FontSize.s16),
       hintStyle:
-          getRegularStyle(color: ColorManager.secondary, fontSize: FontSize.s14),
+          getRegularStyle(color: ColorManager.secondary, fontSize: FontSize.s16),
       errorStyle: getRegularStyle(
         color: ColorManager.red,
       ),
